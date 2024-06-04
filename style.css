@@ -3,21 +3,101 @@
 
     --Red: hsl(0, 100%, 74%);
     --Green: hsl(154, 59%, 51%);
-    --Blue: hsl(248, 32%, 49%);
+    --Purple: hsl(248, 32%, 49%);
     --DarkBlue: hsl(249, 10%, 26%);
     --GrayishBlue: hsl(246, 25%, 77%);
+    --Gray: #ccc;
+    --white: #ffffff;
 }
 
 body {
+    border: solid 2px yellow;
     font-family: var(--fontFamily);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    min-height: 100vh;
 }
 
-.attribution {
-    font-size: 11px; text-align: center;
+.container {
+    border: solid 1px green;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px;
 }
 
-.attribution a {
+.left-side, .right-side {
+    width: 40%;
+}
+
+.purple-box {
+    background-color: var(--Purple);
+    color: var(--white);
+    text-align: center;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    font-size: 12px;
+}
+
+.styled-form {
+    border: solid 1px red;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+}
+
+.styled-form input[type="text"],
+.styled-form input[type="email"],
+.styled-form input[type="password"] {
+    font-weight: 600;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid var(--Gray);
+    border-radius: 4px;
+    box-sizing: border-box; /* This keeps the contact form in its box */
+}
+
+.styled-form button {
+    font-size: 12px;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--Green);
+    color: var(--white);
+    cursor: pointer;
+}
+
+.styled-form button:hover {
+    background-color: var(--Blue);
+}
+
+.styled-form p {
+    font-size: 10px;
+    text-align: center;
+    color: var(--Gray);
+}
+
+.styled-form p strong {
+    color: var(--Red);
+}
+
+footer {
+    text-align: center;
+    font-size: 12px;
+}
+
+footer .attribution a {
     color: var(--Blue);
+    text-decoration: none;
+}
+
+footer .attribution a:hover {
+    text-decoration: underline;
 }
 
 /* Media Queries */
