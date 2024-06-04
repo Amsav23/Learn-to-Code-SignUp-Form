@@ -11,20 +11,27 @@
 }
 
 body {
-    border: solid 2px yellow;
     font-family: var(--fontFamily);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     min-height: 100vh;
+    background-color: var(--Red);
+    background-image: url('images/bg-intro-desktop.png');
+    background-size: cover;
+    background-position: center;
 }
 
 .container {
-    border: solid 1px green;
+    /* border: solid 1px green; */
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 50px;
+}
+
+.left-side {
+    color: var(--white);
 }
 
 .left-side, .right-side {
@@ -37,13 +44,13 @@ body {
     text-align: center;
     padding: 15px;
     margin-bottom: 20px;
-    border-radius: 10px;
+    border-radius: 8px;
     font-size: 12px;
 }
 
 .styled-form {
-    border: solid 1px red;
-    border-radius: 10px;
+    background-color: var(--white);
+    border-radius: 8px;
     display: flex;
     flex-direction: column;
     padding: 25px;
@@ -73,7 +80,7 @@ body {
 }
 
 .styled-form button:hover {
-    background-color: var(--Blue);
+    background-color: var(--Purple);
 }
 
 .styled-form p {
@@ -89,6 +96,7 @@ body {
 footer {
     text-align: center;
     font-size: 12px;
+    margin-top: 50px;
 }
 
 footer .attribution a {
@@ -102,7 +110,7 @@ footer .attribution a:hover {
 
 /* Media Queries */
 @media screen and (max-width: 426px) {
-    body {
-        background-color: pink;
+    container {
+        /* width: 100%; */
     }
 }
