@@ -1,0 +1,28 @@
+* {
+    --fontFamily: "Poppins", sans-serif;
+
+    --Red: hsl(0, 100%, 74%);
+    --Green: hsl(154, 59%, 51%);
+    --Blue: hsl(248, 32%, 49%);
+    --DarkBlue: hsl(249, 10%, 26%);
+    --GrayishBlue: hsl(246, 25%, 77%);
+}
+
+body {
+    font-family: var(--fontFamily);
+}
+
+.attribution {
+    font-size: 11px; text-align: center;
+}
+
+.attribution a {
+    color: var(--Blue);
+}
+
+/* Media Queries */
+@media screen and (max-width: 426px) {
+    body {
+        background-color: pink;
+    }
+}
