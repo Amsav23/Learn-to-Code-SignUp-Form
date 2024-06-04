@@ -99,18 +99,18 @@ footer {
     margin-top: 50px;
 }
 
-footer .attribution a {
-    color: var(--Blue);
+.attribution a {
+    color: var(--Purple);
     text-decoration: none;
 }
 
-footer .attribution a:hover {
+.attribution a:hover {
     text-decoration: underline;
 }
 
 /* Media Queries */
 @media screen and (max-width: 426px) {
-    container {
+    .container {
         /* width: 100%; */
     }
 }
