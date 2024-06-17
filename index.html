@@ -25,12 +25,13 @@
     <div class="right-side">
       <div class="purple-box"><strong>Try it free 7 days</strong> then $20/mo. thereafter</div>
     
-      <form action="#" method="POST" class="styled-form">
-        <input type="text" id="name" name="name" placeholder="First Name" required>
-        <input type="text" id="name" name="name" placeholder="Last Name" required>
+      <form action="#" method="POST" class="styled-form" id="styledForm" novalidate>
+        <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+        <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
         <input type="email" id="email" name="email" placeholder="Email Address" required>
         <input type="password" id="password" name="password" placeholder="Password" required>
         <button type="submit">CLAIM YOUR FREE TRIAL</button>
+        <div class="error-message" id="errorMessage"></div>
         <p>By clicking the button, you are agreeing to our <strong>Terms and Services</strong></p>
       </form>
     </div>
@@ -42,6 +43,32 @@
       Coded by <a href="#">Amyln Savarese</a>.
     </p>
   </footer>
-  
+
+  <script>
+    document.getElementById('styledForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const firstName = document.getElementById('firstName').value.trim();
+        const lastName = document.getElementById('lastName').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value.trim();
+        const errorMessage = document.getElementById('errorMessage');
+        errorMessage.textContent = ''; // Clear previous error message
+
+        if (!firstName || !lastName || !email || !password) {
+            errorMessage.textContent = 'All fields are required.';
+            return;
+        }
+
+        // Simple email validation
+        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!emailPattern.test(email)) {
+            errorMessage.textContent = 'Please enter a valid email address.';
+            return;
+        }
+
+        // If all validations pass, you can submit the form or perform any desired actions
+        alert('Form submitted successfully!');
+    });
+  </script>
 </body>
 </html>

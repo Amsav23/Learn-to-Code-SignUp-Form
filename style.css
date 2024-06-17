@@ -8,6 +8,8 @@
     --GrayishBlue: hsl(246, 25%, 77%);
     --Gray: #ccc;
     --white: #ffffff;
+    --DarkGreen: rgba(0, 99, 50, 0.75);
+    --Blue: #0000ff;
 }
 
 body {
@@ -20,22 +22,31 @@ body {
     background-image: url('images/bg-intro-desktop.png');
     background-size: cover;
     background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .container {
-    /* border: solid 1px green; */
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    padding: 50px;
+    gap: 2rem;
+    margin-bottom: 50px;
+}
+
+.left-side h1 {
+    font-size: 3rem;
 }
 
 .left-side {
     color: var(--white);
+    width: 35%;
 }
 
-.left-side, .right-side {
-    width: 40%;
+.right-side {
+    width: 30%;
 }
 
 .purple-box {
@@ -46,6 +57,7 @@ body {
     margin-bottom: 20px;
     border-radius: 8px;
     font-size: 12px;
+    box-shadow: 0 8px 1px rgba(0, 0, 0, 0.1)
 }
 
 .styled-form {
@@ -53,7 +65,8 @@ body {
     border-radius: 8px;
     display: flex;
     flex-direction: column;
-    padding: 25px;
+    padding: 35px;
+    box-shadow: 0 8px 1px rgba(0, 0, 0, 0.1)
 }
 
 .styled-form input[type="text"],
@@ -68,6 +81,14 @@ body {
     box-sizing: border-box; /* This keeps the contact form in its box */
 }
 
+.styled-form input[type="text"]:focus,
+.styled-form input[type="email"]:focus,
+.styled-form input[type="password"]:focus {
+    border: 1px solid var(--Blue); /* Change border color on focus */
+    box-shadow: 0 0 5px var(--Blue); /* Add a blue shadow to indicate focus */
+    outline: none; /* Remove default browser outline */
+}
+
 .styled-form button {
     font-size: 12px;
     width: 100%;
@@ -77,10 +98,11 @@ body {
     background-color: var(--Green);
     color: var(--white);
     cursor: pointer;
+    box-shadow: 0 2px 1px var(--DarkGreen)
 }
 
 .styled-form button:hover {
-    background-color: var(--Purple);
+    background-color: var(--DarkGreen);
 }
 
 .styled-form p {
@@ -93,10 +115,18 @@ body {
     color: var(--Red);
 }
 
+.error-message {
+    color: var(--Red);
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
 footer {
     text-align: center;
     font-size: 12px;
-    margin-top: 50px;
 }
 
 .attribution a {
