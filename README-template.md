@@ -64,7 +64,20 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+1. `addEventListener` Method:
+- This method is used to attach an event handler to an element.
+- Syntax: `element.addEventListener(eventType, eventHandler, useCapture);`
+- `eventType`: A string that specifies the name of the event to listen for (e.g., 'click', 'submit').
+- `eventHandler`: A function that will be called when the specified event is triggered.
+- `useCapture` (optional): A boolean that indicates whether to use event capturing or bubbling (default is `false` for bubbling).
+
+2. `'submit'` Event:
+`'submit'`: This is the type of event to listen for. In this case, it specifies that the event listener is waiting for a "submit" event, which occurs when a form is submitted. It can be used to perform validation, prevent form submission, or handle form data.
+
+3. Event Handler Function:
+- `function(event) {...}`: This is the event handler function, also known as a callback function, that will be executed when the event occurs / is called when the 'submit' event is triggered.
+- The `event` parameter inside the function provides access to the event object, which includes methods and properties related to the event (e.g., `event.preventDefault()` to stop the form from submitting).
+
 
 To see how you can add code snippets, see below:
 

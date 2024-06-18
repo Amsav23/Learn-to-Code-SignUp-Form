@@ -47,37 +47,55 @@
   </footer>
 
   <script>
+    // I need to attach an EVENT LISTENER to the form's submit event.
     document.getElementById('styledForm').addEventListener('submit', function(event) {
-      // The event.preventDefault() method prevents the form from being submitted, 
-      // allowing the custom validation to take place.
+      // `event.preventDefault()` STOPS the form from being submitted, 
+      // allowing the custom validation logic to run first.
         event.preventDefault();
 
-        // Retrieves the values of the input fields and trims any leading or trailing whitespace.
+        // I need to get input values and trim whitespace.
         const firstName = document.getElementById('firstName').value.trim();
         const lastName = document.getElementById('lastName').value.trim();
         const email = document.getElementById('email').value.trim();
         const password = document.getElementById('password').value.trim();
 
-        // Checks if any of the fields are empty and displays an error message if they are.
+        // I need to check each field individually. If a field is empty, 
+        // set the `errorMessage.textContent` to the specific message for that field.
         const errorMessage = document.getElementById('errorMessage');
-        // Clear previous error message
+        // I need to clear the previous error message.
         errorMessage.textContent = '';
 
-        if (!firstName || !lastName || !email || !password) {
-            errorMessage.textContent = 'All fields are required.';
+        // I need to VALIDATE each field individually and set specific error messages for each field.
+        if (!firstName) {
+            errorMessage.textContent = 'First Name cannot be empty';
             return;
         }
 
-        // Simple email validation
-        // Validates the email format using a regular expression and 
-        // displays an error message if the email is invalid.
+        if (!lastName) {
+            errorMessage.textContent = 'Last Name cannot be empty';
+            return;
+        }
+
+        if (!email) {
+            errorMessage.textContent = 'Email cannot be empty';
+            return;
+        }
+
+        // The email input should be checked against a pattern to ensure it follows the correct format.
+        // The pattern /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/ ensures the email format is correct.
         const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         if (!emailPattern.test(email)) {
-            errorMessage.textContent = 'Please enter a valid email address.';
+          // If it doesn't, a specific error message should be displayed.
+            errorMessage.textContent = 'Looks like this is not an email';
             return;
         }
 
-        // If all validations pass, a success message is displayed
+        if (!password) {
+          errorMessage.textContent = 'Password cannot be empty';
+          return;
+        }
+
+        // If all validations pass, a success message is displayed.
         alert('Form submitted successfully!');
     });
   </script>
