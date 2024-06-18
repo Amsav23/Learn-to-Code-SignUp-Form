@@ -60,6 +60,7 @@ body {
     box-shadow: 0 8px 1px rgba(0, 0, 0, 0.1)
 }
 
+/* Form Styling */
 .styled-form {
     background-color: var(--white);
     border-radius: 8px;
@@ -115,6 +116,7 @@ body {
     color: var(--Red);
 }
 
+/* Error Pop-up Message Styling */
 .error-message {
     color: var(--Red);
     font-size: 15px;
