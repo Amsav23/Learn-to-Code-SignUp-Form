@@ -11,6 +11,7 @@ This is a solution to the [Intro component with sign up form challenge on Fronte
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
+  - [Code that I'm proud of](#code-that-im-proud-of)
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
