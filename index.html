@@ -33,7 +33,7 @@
         <input type="email" id="email" name="email" placeholder="Email Address" required>
         <input type="password" id="password" name="password" placeholder="Password" required>
         <button type="submit">CLAIM YOUR FREE TRIAL</button>
-        <div class="error-message" id="errorMessage"></div>
+        <div id="errorMessage"></div>
         <p>By clicking the button, you are agreeing to our <strong>Terms and Services</strong></p>
       </form>
     </div>
@@ -52,10 +52,14 @@
       // `event.preventDefault()` STOPS the form from being submitted, 
       // allowing the custom validation logic to run first.
         event.preventDefault();
+        console.log('check')
 
-        // I need to get input values and trim whitespace.
+        // I need to get input values and trim whitespace
+        // trim GETS RID OF empty space that the function WOULD HAVE considered to be a valid entry
         const firstName = document.getElementById('firstName').value.trim();
+        console.log('firstName' + firstName + 'x')
         const lastName = document.getElementById('lastName').value.trim();
+        console.log('lastName' + lastName + 'x')
         const email = document.getElementById('email').value.trim();
         const password = document.getElementById('password').value.trim();
 
@@ -66,12 +70,18 @@
         errorMessage.textContent = '';
 
         // I need to VALIDATE each field individually and set specific error messages for each field.
-        if (!firstName) {
+        // I need to check for an EMPTY string
+        // I could say firstName == ""
+        // This is checking if firstName is equal to an empty string
+        // `if (!firstName)` is another way to say `if (firstName == "")`
+        if (firstName == "") {
+          console.log('empty firstName')
             errorMessage.textContent = 'First Name cannot be empty';
             return;
         }
 
         if (!lastName) {
+          console.log('empty lastName')
             errorMessage.textContent = 'Last Name cannot be empty';
             return;
         }

@@ -117,7 +117,8 @@ body {
 }
 
 /* Error Pop-up Message Styling */
-.error-message {
+/* use # for styling id's, rather than making an additional className */
+#errorMessage {
     color: var(--Red);
     font-size: 15px;
     font-weight: 500;
